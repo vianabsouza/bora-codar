@@ -1,0 +1,281 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  font-family: 'Roboto';
+  font-size: 62.5%;
+}
+
+.sr-only {
+  border-width: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.btn {
+  align-items: center;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  display: flex;
+  font-weight: 700;
+  font-size: 1.4rem;
+  justify-content: center;
+  line-height: 2.4rem;
+  padding: 0.4rem 2.4rem;
+  text-transform: uppercase;
+  transition: background-color 200ms;
+}
+
+.primary {
+  background-color: #6246EA;
+  color: #FFFFFF;
+}
+
+.primary:hover {
+  background-color: #523DBE;
+  color: #FFFFFF;
+}
+
+.secondary {
+  color: #6246EA;
+}
+
+.secondary:hover {
+  background-color: #6246EA;
+  color: #FFFFFF;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+input, select, button {
+  all: unset;
+  font-family: 'Roboto';
+}
+
+header {
+  background-color:#F8F8FF;
+  display: grid;
+  min-height: 53.2rem;
+  overflow: hidden;
+  place-content: center;
+  position: relative;
+}
+
+header::before {
+  background-image: url(./assets/bg-header-top.svg);
+  content: '';
+  height: 34.5rem;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 40.7rem;
+  z-index: 0;
+}
+
+header::after {
+  background-image: url(./assets/bg-header-bottom.svg);
+  bottom: -1.2rem;
+  content: '';
+  height: 33rem;
+  position: absolute;
+  right: 0;
+  width: 41.4rem;
+}
+
+header .content {
+  position: relative;
+  width: fit-content;
+  z-index: 1;
+}
+
+header .content .top {
+  text-align: center;
+}
+
+header p {
+  color: #E45858;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  line-height: 160%;
+  text-transform: uppercase;
+}
+
+header h1 {
+  color: #121214;
+  font-size: 4.8rem;
+  line-height: 125%;
+  margin: 1.8rem auto 0;
+  max-width: 64.7rem;
+}
+
+header h1 span {
+  color: #6246EA;
+}
+
+form {
+  background-color: #FFFFFF;
+  border: 0.1rem solid #EAEAEA;
+  border-radius: 1rem;
+  display: flex;
+  gap: 2.4rem;
+  margin-top: 4rem;
+  padding: 4rem;
+}
+
+.search-field {
+  align-items: center;
+  background-color: #F4F4FF;
+  border-radius: 0.5rem;
+  display: flex;
+  gap: 1.2rem;
+  padding: 1.2rem 0.8rem 1.2rem 1.4rem;
+}
+
+input, select {
+  color: #7C7C8A;
+  min-width: 29rem;
+}
+
+.search-field i {
+  color: #E45858;
+  font-size: 2.4rem;
+}
+
+.select i.ph-caret-down-light {
+  color: #858793;
+  right: 1rem;
+  position: absolute;
+  z-index: 0;
+}
+
+select, .select {
+  position: relative;
+}
+
+select {
+  z-index: 1;
+}
+
+form button.btn {
+  padding: 1.2rem 3.2rem;
+}
+
+main {
+  padding-inline: 4rem;
+}
+
+main > .content {
+  margin: 10rem auto;
+  max-width: 1216px;
+}
+
+section.top {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+section.top .view {
+  border: 1px solid #EAEAEA;
+  border-radius: 6px;
+  display: flex;
+  gap: 0.5rem;
+  padding: 8px;
+}
+
+section.cards {
+  display: grid;
+  gap: 3.2rem;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-top: 4rem;
+}
+
+.card {
+  border: 1px solid #EAEAEA;
+  border-radius: 1rem;
+  max-width: 38.4rem;
+  overflow: hidden;
+}
+
+.card .content {
+  display: grid;
+  gap: 1.6rem;
+  padding: 1.6rem;
+}
+
+.card h3 {
+  color: #121214;
+  font-size: 2.0rem;
+  line-height: 140%;
+}
+
+.card p {
+  opacity: .75;
+}
+
+.card .location {
+  align-items: center;
+  display: flex;
+  gap: 1.25rem;
+  opacity: .75;
+}
+
+.location i {
+  color: #E45858;
+  font-size: 2.4rem;
+  opacity: 1;
+}
+
+@media (max-width: 1024px) {
+  :root {
+    font-size: 50%;
+  }
+
+  header::before {
+    background-repeat: no-repeat;
+    background-size: 50vw;
+  }
+}
+
+@media (max-width: 870px) {
+  header .content {
+    padding: 4rem;
+  }
+
+  header form {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 660px) {
+  section.cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 500px) {
+  section.cards {
+    grid-template-columns: 1fr;
+  }
+
+  .card img {
+    width: 100%;
+  }
+
+  .card {
+    max-width: 100%;
+  }
+}
